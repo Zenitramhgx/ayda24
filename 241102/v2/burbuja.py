@@ -6,6 +6,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import random
+import time
 
 CANTIDAD = 10
 
@@ -35,11 +36,19 @@ def main():
     # Lista desordenada
     print("Lista desordenada:", desordenado)
     
+    tiempo_inicial = time.time()
+
     # Burbuja
     ordenado = burbuja(desordenado)
     
+    tiempo_final = time.time()
+    
+    tiempo_total = tiempo_final - tiempo_inicial
+
     # Lista ordenada
     print("Lista ordenada:", ordenado)
+
+    print(f'Tiempo total {tiempo_total}')
 
     if not es_valido(ordenado):
         print("No esta ordenado")
